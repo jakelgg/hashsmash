@@ -4,7 +4,7 @@ A slow Python hash encryption and decyption tool. I am new to Python and program
 
 ## Features
 
-* Algorithms - MD5, SHA1, SHA224, SHA256, SHA384, and SHA512.
+* Algorithms - MD5, SHA1, SHA256, SHA384, and SHA512.
 * Encrypt with any algorithm
 * Decrypt by encrypting file of passwords and comparing hashes.
 
@@ -43,10 +43,10 @@ python hashsmash.py --encrypt=text-to-encrypt --algorithm=md5
 
 ### Decryption
 
-Decrypt files using three arguments, --decrypt= --algorithm= and --passfile=. The password file must be located in the same directory as the project.
+Decrypt files using two arguments, --decrypt= and --passfile=. You no longer have to specify the algorithm while decrypting. The password file must be located in the same directory as the project.
 
 ```
-python hashsmash.py --decrypt=text-to-decrypt --algorithm=sha256 --passfile=rockyou.txt
+python hashsmash.py --decrypt=text-to-decrypt --passfile=rockyou.txt
 ```
 
 ## License
