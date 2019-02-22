@@ -1,4 +1,6 @@
 import sys, os, hashlib, pyfiglet, getopt
+from datetime import datetime
+
 
 toDecrypt = ''
 toEncrypt = ''
@@ -12,6 +14,7 @@ crackedBanner = pyfiglet.figlet_format('HASHSMASHED!!!')
 def usage():
 
     global banner
+
     if os.name == 'nt':
         os.system('cls')
     else:
@@ -37,6 +40,7 @@ def usage():
 def listAlgorithms():
 
     global banner
+
     if os.name == 'nt':
         os.system('cls')
     else:
@@ -51,6 +55,7 @@ def listAlgorithms():
 
 def md5decrypt():
 
+    startTime = datetime.now()
     global algorithm, toDecrypt, passwordFile, banner, crackedBanner
     line = 0
     passwordFile = open(passwordFile, 'r', errors='ignore')
@@ -61,20 +66,24 @@ def md5decrypt():
         line += 1
 
         if hashedGuess == toDecrypt:
+
             if os.name == 'nt':
                 os.system('cls')
             else:
                 os.system('clear')
 
-            print(banner)
             print(crackedBanner)
             print("  The password is", str(word), '  ', toDecrypt)
+            endTime = datetime.now()
+            print('  Time elapsed: ', endTime-startTime)
             quit()
 
         elif hashedGuess != toDecrypt:
+
             print('  ', line, "   ", str(word), ' '*7, hashedGuess, '\n')
 
         else:
+
             if os.name == 'nt':
                 os.system('cls')
             else:
@@ -86,6 +95,7 @@ def md5decrypt():
 
 def sha1decrypt():
 
+    startTime = datetime.now()
     global algorithm, toDecrypt, passwordFile, banner, crackedBanner
     line = 0
     passwordFile = open(str(passwordFile), 'r', errors='ignore')
@@ -94,21 +104,26 @@ def sha1decrypt():
         word = word.rstrip("\n")
         hashedGuess = hashlib.sha1(word.encode()).hexdigest()
         line += 1
+
         if hashedGuess == toDecrypt:
+
             if os.name == 'nt':
                 os.system('cls')
             else:
                 os.system('clear')
 
-            print(banner)
             print(crackedBanner)
             print("  The password is", str(word), '  ', toDecrypt)
+            endTime = datetime.now()
+            print('  Time elapsed: ', endTime-startTime)
             quit()
 
         elif hashedGuess != toDecrypt:
+
             print('  ', line, "   ", str(word), ' '*7, hashedGuess, '\n')
 
         else:
+
             if os.name == 'nt':
                 os.system('cls')
             else:
@@ -120,6 +135,7 @@ def sha1decrypt():
 
 def sha224decrypt():
 
+    startTime = datetime.now()
     global algorithm, toDecrypt, passwordFile, banner, crackedBanner
     line = 0
     passwordFile = open(str(passwordFile), 'r', errors='ignore')
@@ -130,24 +146,34 @@ def sha224decrypt():
         line += 1
 
         if hashedGuess == toDecrypt:
-            os.system('clear')
-            os.system('cls')
+
+            if os.name == 'nt':
+                os.system('clear')
+            else:
+                os.system('cls')
+
             print(crackedBanner)
             print("  The password is", str(word), '  ', toDecrypt)
+            endTime = datetime.now()
+            print('  Time elapsed: ', endTime-startTime)
             quit()
 
         elif hashedGuess != toDecrypt:
             print('  ', line, "   ", str(word), ' '*7, hashedGuess, '\n')
 
         else:
-            os.system('clear')
-            os.system('cls')
+            if os.name == 'nt':
+                os.system('clear')
+            else:
+                os.system('cls')
+
             print(banner)
             print("  Didn\'t find a match to the hash.")
 
 
 def sha256decrypt():
 
+    startTime = datetime.now()
     global algorithm, toDecrypt, passwordFile, banner, crackedBanner
     line = 0
     passwordFile = open(str(passwordFile), 'r', errors='ignore')
@@ -158,24 +184,34 @@ def sha256decrypt():
         line += 1
 
         if hashedGuess == toDecrypt:
-            os.system('clear')
-            os.system('cls')
+
+            if os.name == 'nt':
+                os.system('clear')
+            else:
+                os.system('cls')
+
             print(crackedBanner)
             print("  The password is", str(word), '  ', toDecrypt)
+            endTime = datetime.now()
+            print('  Time elapsed: ', endTime-startTime)
             quit()
             
         elif hashedGuess != toDecrypt:
             print('  ', line, "   ", str(word), ' '*7, hashedGuess, '\n')
 
         else:
-            os.system('clear')
-            os.system('cls')
+            if os.name == 'nt':
+                os.system('clear')
+            else:
+                os.system('cls')
+
             print(banner)
             print("  Didn\'t find a match to the hash.")
 
 
 def sha384decrypt():
 
+    startTime = datetime.now()
     global algorithm, toDecrypt, passwordFile, banner, crackedBanner
     line = 0
     passwordFile = open(str(passwordFile), 'r', errors='ignore')
@@ -186,24 +222,34 @@ def sha384decrypt():
         line += 1
 
         if hashedGuess == toDecrypt:
-            os.system('clear')
-            os.system('cls')
+
+            if os.name == 'nt':
+                os.system('clear')
+            else:
+                os.system('cls')
+
             print(crackedBanner)
             print("  The password is", str(word), '  ', toDecrypt)
+            endTime = datetime.now()
+            print('  Time elapsed: ', endTime-startTime)
             quit()
 
         elif hashedGuess != toDecrypt:
             print('  ', line, "   ", str(word), ' '*7, hashedGuess, '\n')
 
         else:
-            os.system('clear')
-            os.system('cls')
+            if os.name == 'nt':
+                os.system('clear')
+            else:
+                os.system('cls')
+
             print(banner)
             print("  Didn\'t find a match to the hash.")
 
 
 def sha512decrypt():
 
+    startTime = datetime.now()
     global algorithm, toDecrypt, passwordFile, banner, crackedBanner
     line = 0
     passwordFile = open(passwordFile, 'r', errors='ignore')
@@ -214,18 +260,27 @@ def sha512decrypt():
         line += 1
 
         if hashedGuess == toDecrypt:
-            os.system('clear')
-            os.system('cls')
+            
+            if os.name == 'nt':
+                os.system('clear')
+            else:
+                os.system('cls')
+
             print(crackedBanner)
             print("  The password is", str(word), '  ', toDecrypt)
+            endTime = datetime.now()
+            print('  Time elapsed: ', endTime-startTime)
             quit()
 
         elif hashedGuess != toDecrypt:
             print('  ', line, "   ", str(word), ' '*7, hashedGuess, '\n')
 
         else:
-            os.system('clear')
-            os.system('cls')
+            if os.name == 'nt':
+                os.system('clear')
+            else:
+                os.system('cls')
+
             print(banner)
             print("  Didn\'t find a match to the hash.")
 
@@ -234,8 +289,11 @@ def md5encrypt():
 
     global toEncrypt, algorithm, banner
 
-    os.system('clear')
-    os.system('cls')
+    if os.name == 'nt':
+        os.system('clear')
+    else:
+        os.system('cls')
+
     print(banner)
 
     word = toEncrypt.encode('utf8')
@@ -246,8 +304,11 @@ def sha1encrypt():
 
     global toEncrypt, algorithm, banner
 
-    os.system('clear')
-    os.system('cls')
+    if os.name == 'nt':
+        os.system('clear')
+    else:
+        os.system('cls')
+
     print(banner)
 
     word = toEncrypt.encode('utf8')
@@ -258,8 +319,11 @@ def sha224encrypt():
 
     global toEncrypt, algorithm, banner
 
-    os.system('clear')
-    os.system('cls')
+    if os.name == 'nt':
+        os.system('clear')
+    else:
+        os.system('cls')
+
     print(banner)
 
     word = toEncrypt.encode('utf8')
@@ -270,8 +334,11 @@ def sha256encrypt():
 
     global toEncrypt, algorithm, banner
 
-    os.system('clear')
-    os.system('cls')
+    if os.name == 'nt':
+        os.system('clear')
+    else:
+        os.system('cls')
+
     print(banner)
 
     word = toEncrypt.encode('utf8')
@@ -282,8 +349,11 @@ def sha384encrypt():
 
     global toEncrypt, algorithm, banner
 
-    os.system('clear')
-    os.system('cls')
+    if os.name == 'nt':
+        os.system('clear')
+    else:
+        os.system('cls')
+
     print(banner)
 
     word = toEncrypt.encode('utf8')
@@ -293,8 +363,11 @@ def sha512encrypt():
 
     global toEncrypt, algorithm, banner
 
-    os.system('clear')
-    os.system('cls')
+    if os.name == 'nt':
+        os.system('clear')
+    else:
+        os.system('cls')
+
     print(banner)
 
     word = toEncrypt.encode('utf8')
